@@ -41,14 +41,24 @@ document.querySelector("#skip").addEventListener("click", function() {
 });
 
 document.querySelector("#old").addEventListener("click", function() {
-
+	video.setAttribute("class","oldTime")
 });
 
 document.querySelector("#original").addEventListener("click", function() {
-	
+	video.setAttribute("class",'')
 });
 
 document.querySelector("#mute").addEventListener("click", function() {
+	if(video.muted){
+		video.muted = false;
+		document.getElementById("mute").innerHTML = "Mute";
+		console.log('Unmuted');
+	}
+	else{
+		video.muted = true;
+		document.getElementById("mute").innerHTML = "Unmute";
+		console.log('Muted');
+	}
 	
 });
 
